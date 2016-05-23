@@ -12,11 +12,11 @@ db.knex.schema.hasTable('questions').then(function(exists) {
   if (!exists) {
     db.knex.schema.createTable('questions', function (question) {
       question.increments('id').primary();
-      question.string('text', 255);
-      question.string('answer', 255);
-      question.string('category', 255);
-      question.string('topic', 255);
-      question.integer('difficulty');
+      question.string('text', 255).notNullable();
+      question.string('answer', 255).notNullable();
+      question.string('category', 255).notNullable();
+      question.string('topic', 255).notNullable();
+      question.integer('difficulty').notNullable();
       question.timestamps();
     }).then(function (table) {
       console.log('Created Table', table);
