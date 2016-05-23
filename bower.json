@@ -1,0 +1,20 @@
+{
+  "name": "snapcode.io",
+  "version": "1.0.0",
+  "authors": [
+    "Nick Lebedev <nlebedev100@gmail.com>"
+  ],
+  "license": "UNLICENSED",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/lib"
+  ],
+  "dependencies": {
+    "angular": "~1.3.16",
+    "angular-route": "~1.3.16",
+    "angular-mocks": "~1.3.16"
+  }
+}
