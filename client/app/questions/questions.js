@@ -73,7 +73,11 @@ angular.module('snapcode.questions', ['angularModalService'])
     } else {
       //WRONG ANSWER!
       $(".terminal-history").append('<div>$ <span>' + $scope.data.terminalText + '</span><div>');
+      $(".terminal-history").append('<div> <span class="terminal-response"> -bash: '+ $scope.data.terminalText.split(" ")[0] + ': command not found' + '</span><div>');
       $scope.data.terminalText = '';
+
+      //TODO: delete first two lines in number of lines in terminal > 5?
+
 
       // -bash: dsadas: command not found
       // $scope.showNextQuestion();

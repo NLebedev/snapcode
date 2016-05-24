@@ -3,10 +3,16 @@ app = angular.module('snapcode', [
   'angularModalService',
   'snapcode.services',
   'snapcode.questions',
+  'snapcode.cources',
   'ngRoute'
 ])
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
+    .when('/', {
+      templateUrl: 'app/cources/cources.html',
+      controller: 'CourcesController',
+      authenticate: true
+    })
     .when('/questions', {
       templateUrl: 'app/questions/questions.html',
       controller: 'QuestionsController',
