@@ -1,7 +1,29 @@
-<h1></h1>
-<div>{{ data.currentQuestion.text}}</div>
-<button ng-click="showNextQuestion()">Next question</button>
-<hr>
-<pre>
-{{ data }}
-</pre>
+
+<div class="container" ng-keydown="key($event)">
+  <h1>Welcome to SnapCode and helloworld.</h1>
+  <div class="row">
+    <div class="col-md-12">
+      <div>{{ data.currentQuestion.text}}</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 terminal" >
+      $ {{ data.terminalText }}<span class="myCaret">&nbsp</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-primary" ng-click="showNextQuestion()">Next question</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">.col-md-3 </div>
+    <div class="col-md-9">.col-md-9</div>
+  </div>
+  <hr>
+  <textarea class="hidden-terminal" ng-model="data.terminalText"></textarea>
+  <pre>
+  {{ data | json }}
+  </pre>
+</div>

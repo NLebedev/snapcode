@@ -1,6 +1,6 @@
 angular.module('snapcode.questions', [])
 
-.controller('QuestionsController', function ($scope, Questions) {
+.controller('QuestionsController', function ($scope, Questions, $rootScope) {
   // Your code here
   var questionsUnseen = [];
   $scope.data = {};
@@ -32,6 +32,24 @@ angular.module('snapcode.questions', [])
     }
   };
 
+  $scope.key = function($event){
+    if ($event.keyCode === 39){
+      //right is pressed
+      $('.myCaret').css('margin-left','+=9px');
+    } else if ($event.keyCode === 37) {
+      //left is pressed
+      $('.myCaret').css('margin-left','-=9px');
+    } else if ($event.keyCode === 13) {
+      //enter is pressed
+      $scope.data.terminalText = '';
+      $('.myCaret').css('margin-left','0');
+    }
+  };
 
-  initializeQuestions();
+  $('.terminal').click(function() {
+     $('.hidden-terminal').focus();
   });
+  
+  initializeQuestions();
+
+});

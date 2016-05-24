@@ -1,4 +1,5 @@
-angular.module('snapcode', [
+app = angular.module('snapcode', [
+  'ui.bootstrap',
   'snapcode.services',
   'snapcode.questions',
   'ngRoute'
