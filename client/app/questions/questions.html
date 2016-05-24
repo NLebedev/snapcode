@@ -1,28 +1,27 @@
 
 <div class="container" ng-keydown="key($event)">
-  <h1>Welcome to SnapCode and helloworld.</h1>
+  
   <div class="row">
     <div class="col-md-12">
-      <div>{{ data.currentQuestion.text}}</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2 terminal" >
-      $ {{ data.terminalText }}<span class="myCaret">&nbsp</span>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <button class="btn btn-primary" ng-click="showNextQuestion()">Next question</button>
+      <div class="well task"><h2>{{ data.currentQuestion.text}}</h2></div>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-3">.col-md-3 </div>
-    <div class="col-md-9">.col-md-9</div>
+    <div class="col-md-12 terminal" ng-click="startCaret()">
+      <div>$ {{ data.terminalText }}<span class="myCaret">&nbsp</span></div>
+    </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-success next-btn" ng-click="showNextQuestion()">Next question</button>
+    </div>
+  </div>
+
+  
   <hr>
-  <textarea class="hidden-terminal" ng-model="data.terminalText"></textarea>
+  <input class="hidden-terminal" ng-model="data.terminalText" ng-blur="stopCaret()">
   <pre>
   {{ data | json }}
   </pre>

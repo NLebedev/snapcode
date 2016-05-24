@@ -14,23 +14,38 @@ h1 {
 .hidden-terminal {
   background-color:#000;
   color:#fff;
-  width: 100%;
+  height: 50px;
   font-family:monospace;
 }
 
 .terminal {
+  color: #0f8;
+  width: 100%;
+  height: 200px;
+  background-color: #000;
   font-family:monospace;
 }
 
 @keyframes blink {
-    0%   { background-color: black; }
+    0% { background-color: black; }
   100% { background-color: white }
 }
 
 .myCaret {
-  background-color: white;
   animation-name: blink;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  margin-left: 2px;
+  animation-duration: 0.8s;
+  animation-iteration-count: 0;
 }
+
+.score-block {
+  margin-top: 30px;
+}
+.task {
+  font-size: 50px;
+}
+.next-btn {
+  width: 100%;
+  margin-top: 8px;
+}
+
+

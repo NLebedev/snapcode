@@ -11,6 +11,11 @@ app = angular.module('snapcode', [
       controller: 'QuestionsController',
       authenticate: true
     })
+    .when('/score', {
+      templateUrl: 'app/questions/score.html',
+      controller: 'QuestionsController',
+      authenticate: true
+    })
     .otherwise({
       redirectTo: '/questions'
     });

@@ -20,8 +20,25 @@ angular.module('snapcode.services', [])
     });
   };
 
+
   return {
     getAll: getAll,
-    addOne: addOne
-  };
+    addOne: addOne,
+  }
+  
 })
+.factory('scoreFactory', function() {
+    var score = 0;
+    function set(data) {
+      score = data;
+    }
+    function get() {
+      return score;
+    }
+
+    return {
+      set: set,
+      get: get
+    }
+
+});
