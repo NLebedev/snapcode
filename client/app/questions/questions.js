@@ -1,6 +1,6 @@
 angular.module('snapcode.questions', ['angularModalService'])
 
-.controller('QuestionsController', function ($scope, $rootScope, $location, Questions, scoreFactory, ModalService) {
+.controller('QuestionsController', function ($scope, $rootScope, $location, Questions, scoreFactory, ModalService, hintService) {
   // Your code here
   
   //VARIABLES
@@ -50,6 +50,7 @@ angular.module('snapcode.questions', ['angularModalService'])
       currentScore += scorePrize;
       console.log('current score is', currentScore);
       $scope.data.currentQuestion = $scope.data.unseenQuestions.splice(Math.floor(Math.random() * questionsUnseen.length), 1)[0];
+      hintService.set($scope.data.currentQuestion.hint);
       console.log('currentQuestion', $scope.data.currentQuestion);
     } else {
 

@@ -35,11 +35,18 @@ angular.module('snapcode.services', [])
     function get() {
       return score;
     }
-
     return {
       set: set,
       get: get
     }
-
+})
+.service('hintService', function() {
+    var hint = 'No hints available for this question';
+    this.set = function(text) {
+      hint = text;
+    }
+    this.get = function() {
+      return hint;
+    }
 });
 

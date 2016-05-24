@@ -64,9 +64,10 @@ app.controller('Controller', function($scope, ModalService) {
     
 });
 
-app.controller('ModalController', function($scope, close) {
+app.controller('ModalController', function($scope, close, hintService) {
  $scope.data = {};
- $scope.data.hint = 'hello world';
+ $scope.data.hint = hintService.get();
+ // $scope.data.hint = 'hello world';
  $scope.close = function(result) {
   console.log('here');
   close(result, 500);
