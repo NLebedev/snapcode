@@ -10,7 +10,7 @@
   <div class="row">
     <div class="col-md-12 col-lg-12 col-sm-12 " ng-click="startCaret()">
       <button class="btn btn-warning help-btn" ng-click="show()"><span class="glyphicon glyphicon-info-sign" aria-hidden="true" "></span> USE HINT</button>
-      <div class="terminal">$ {{ data.terminalText }}<span class="myCaret">&nbsp</span></div>
+      <div class="terminal"><span class="terminal-history"></span><span>$ <span class="terminal-text" ng-bind="data.terminalText" ng-trim="false"></span><span class="myCaret">&nbsp</span><span></div>
     </div>
   </div>
 
@@ -24,7 +24,7 @@
 
   
   <hr>
-  <input class="hidden-terminal" ng-model="data.terminalText" ng-blur="stopCaret()">
+  <input class="hidden-terminal" ng-model="data.terminalText" ng-trim="false" ng-blur="stopCaret()" maxlength="38">
   <pre>
   {{ data | json }}
   </pre>

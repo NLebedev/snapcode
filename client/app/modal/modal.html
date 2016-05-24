@@ -1,40 +1,16 @@
-<!--   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
+<div class="modal fade">
+  <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-body">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title center" id="myModalLabel"><%= t('join_our_newsletter') %></h4>
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <div class="newsletter-text center">
-            <%= t('newsletter_first_line') %> <br/>
-            <%= t('newsletter_second_line') %>
-            </div>
-            <%= form_for Subscriber.new do |f| %>
-              <%= f.text_field :email, :required => true, class: 'form-control', placeholder: t('enter_your_email_address') %>
-              <%= f.submit t('subscribe_now') + '!', class: 'btn btn-primary wide-btn' %>
-            <% end %>
-          </div>
-        </div>
+      <div class="modal-header">
+        <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
       </div>
-      
+      <div class="modal-body">
+        <h1 class="hint-text">{{ data.hint }}</h1>
+      </div>
+      <div class="modal-footer">
+       
+        <button type="button" ng-click="close()" class="btn btn-primary" data-dismiss="modal">Got it!</button>
+      </div>
     </div>
   </div>
 </div>
- -->
-  <div class="modal fade">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
-              </div>
-              <div class="modal-body">
-                <h1 class="hint-text">{{ data.hint }}</h1>
-              </div>
-              <div class="modal-footer">
-               
-                <button type="button" ng-click="close()" class="btn btn-primary" data-dismiss="modal">Got it!</button>
-              </div>
-            </div>
-          </div>
-        </div>

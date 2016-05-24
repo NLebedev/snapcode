@@ -100,3 +100,10 @@ h1 {
   color: rgba(0, 0, 0, 0.78);
 }
 
+.terminal-text{
+  white-space: pre;
+}
+
+.terminal-response {
+  color:#fff;
+}

@@ -1,11 +1,12 @@
 angular.module('snapcode.questions', ['angularModalService'])
 
-.controller('QuestionsController', function ($scope, $rootScope, $location, Questions, scoreFactory, ModalService, hintService) {
+.controller('QuestionsController', function ($scope, $rootScope, $location, $timeout, Questions, scoreFactory, ModalService, hintService) {
   // Your code here
   
   //VARIABLES
   ////////////////////
   $caret = $('.myCaret');
+  $terminal = $('.terminal');
   $scope.data = {};
   var numberOfQ = 5;
   var answeredCount = 0;
@@ -45,6 +46,7 @@ angular.module('snapcode.questions', ['angularModalService'])
 
   //show next q
   $scope.showNextQuestion = function () {
+    $(".terminal-history").empty();
     if ($scope.data.unseenQuestions.length > 0 && answeredCount < numberOfQ) {
       answeredCount += 1;
       currentScore += scorePrize;
@@ -63,11 +65,18 @@ angular.module('snapcode.questions', ['angularModalService'])
 
   $scope.evaluateAnswer = function () {
     if ($scope.data.terminalText === $scope.data.currentQuestion.answer) {
-      console.log('Right answer!');
+      //RIGHT ANSWER!
+      $(".terminal-history").append('<div>$ <span>' + $scope.data.terminalText + '</span><div>');
+      $(".terminal-history").append('<div> <span class="terminal-response">' + $scope.data.currentQuestion.terminal_response + '</span><div>');
       $scope.data.terminalText = '';
-      $scope.showNextQuestion();
+      $timeout($scope.showNextQuestion,1000);
     } else {
-      $scope.showNextQuestion();
+      //WRONG ANSWER!
+      $(".terminal-history").append('<div>$ <span>' + $scope.data.terminalText + '</span><div>');
+      $scope.data.terminalText = '';
+
+      // -bash: dsadas: command not found
+      // $scope.showNextQuestion();
       console.log('Try again, expected '+ $scope.data.currentQuestion.answer + ' got ' + $scope.data.terminalText);
     }
   }
@@ -82,13 +91,16 @@ angular.module('snapcode.questions', ['angularModalService'])
   $scope.key = function($event){
     if ($event.keyCode === 39){
       //right is pressed
-      $caret.css('margin-left','+=9px');
+      //SIMPLE SOLUTION: DO NOT ALLOW LEFT AND RIGHT KEY PRESSES
+      $event.preventDefault();
+      //$caret.css('margin-left','+=9px');
     } else if ($event.keyCode === 37) {
       //left is pressed
-      $caret.css('margin-left','-=9px');
+      $event.preventDefault();
+      // $caret.css('margin-left','-=9px');
     } else if ($event.keyCode === 13) {
       //enter is pressed
-      $caret.css('margin-left','0');
+      // $caret.css('margin-left','0');
       $scope.evaluateAnswer();
     }
   };
