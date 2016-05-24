@@ -1,5 +1,6 @@
 app = angular.module('snapcode', [
-  'ui.bootstrap',
+  // 'ui.bootstrap',
+  'angularModalService',
   'snapcode.services',
   'snapcode.questions',
   'ngRoute'
@@ -55,3 +56,24 @@ app = angular.module('snapcode', [
   //   }
   // });
 });
+
+
+app.controller('Controller', function($scope, ModalService) {
+    
+    
+    
+});
+
+app.controller('ModalController', function($scope, close) {
+ $scope.data = {};
+ $scope.data.hint = 'hello world';
+ $scope.close = function(result) {
+  console.log('here');
+  close(result, 500);
+  // $('.modal-backdrop.in').css('opacity','0');
+   // close, but give 500ms for bootstrap to animate
+ };
+
+});
+
+

@@ -1,6 +1,6 @@
-angular.module('snapcode.questions', [])
+angular.module('snapcode.questions', ['angularModalService'])
 
-.controller('QuestionsController', function ($scope, $rootScope, $location, Questions, scoreFactory) {
+.controller('QuestionsController', function ($scope, $rootScope, $location, Questions, scoreFactory, ModalService) {
   // Your code here
   
   //VARIABLES
@@ -104,6 +104,48 @@ angular.module('snapcode.questions', [])
      $('.hidden-terminal').focus();
   });
   //**********************************************
+  ModalService.showModal({
+    templateUrl: "app/modal/modal.html",
+    // controller: "ModalController"
+
+  });
+
+
+  $scope.show = function() {
+        ModalService.showModal({
+            templateUrl: 'app/modal/modal.html',
+            controller: "ModalController"
+        }).then(function(modal) {
+         console.log('modal is ', modal);
+            modal.element.modal();
+            $(".in:not(.fade)").remove();
+            modal.close.then(function(result) {
+              console.log('closed!');
+              $scope.message = "You said " + result;
+            });
+        });
+    };
+
+
+  // ModalService.showModal({
+  //   templateUrl: "app/modal/modal.html",
+  //   controller: "modal"
+
+  // }).then(function(modal) {
+  //   // console.log('modal', modal)
+  //   //it's a bootstrap element, use 'modal' to show it
+  //   // modal.element.modal();
+  //   // modal.close.then(function(result) {
+  //   //   console.log(result);
+  //   // });
+  // });
+
+  // $dialog.dialog({}).open('modal.html');  
+  // $scope.showModal = function() {
+  //   $('#myModal').modal('show');
+  // }
+//       $('#myModal').modal({backdrop: 'static', keyboard: false}) 
+
 
   initializeQuestions();
 });
