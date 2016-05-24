@@ -1,15 +1,16 @@
 var path = require('path');
+var connection = process.env.DATABASE_URL || {
+  user: 'postgres',
+  database: 'postgres',
+  port: 5432,
+  host: 'localhost',
+  password: 'postgrespass'
+}
+
 var knex = require('knex')({
   // client: 'sqlite3',
   client: 'pg',
-  connection: {
-    user: 'postgres',
-    database: 'postgres',
-    port: 5432,
-    host: 'localhost',
-    password: 'postgrespass'
-    // filename: path.join(__dirname, '../../db/snapcode.sqlite')
-  },
+  connection: connection,
   useNullAsDefault: true
 });
 var db = require('bookshelf')(knex);

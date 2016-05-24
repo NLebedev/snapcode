@@ -67,4 +67,8 @@ h1 {
   color: #00C700;
 }
 
+.navbar {
+  border-radius: 0;
+}
+
 
