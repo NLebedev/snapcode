@@ -20,7 +20,8 @@ h1 {
 
 .terminal {
   color: #0f8;
-  width: 100%;
+  margin-left: 15px;
+  margin-right: 15px;
   height: 200px;
   background-color: #000;
   font-family:monospace;
