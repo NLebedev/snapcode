@@ -14,6 +14,7 @@ angular.module('snapcode.questions', ['angularModalService'])
   var scorePrize = 100;
   var priceOfSecond = 2;
   var questionsUnseen = [];
+  $scope.data.terminalText = '';
   ////////////////////
 
   $scope.data.totalScore = scoreFactory.get();
@@ -72,8 +73,10 @@ angular.module('snapcode.questions', ['angularModalService'])
       $timeout($scope.showNextQuestion,1000);
     } else {
       //WRONG ANSWER!
-      $(".terminal-history").append('<div>$ <span>' + $scope.data.terminalText + '</span><div>');
+      $(".terminal-history").append('<div>$ <span>' + $scope.data.terminalText || '' + '</span><div>');
+      if ($scope.data.TerminalText !== '') {
       $(".terminal-history").append('<div> <span class="terminal-response"> -bash: '+ $scope.data.terminalText.split(" ")[0] + ': command not found' + '</span><div>');
+      }
       $scope.data.terminalText = '';
 
       //TODO: delete first two lines in number of lines in terminal > 5?
@@ -93,7 +96,7 @@ angular.module('snapcode.questions', ['angularModalService'])
 
   //JQUERY AND DOM**************************************
   $scope.key = function($event){
-    if ($event.keyCode === 39){
+    if ($event.keyCode === 39) {
       //right is pressed
       //SIMPLE SOLUTION: DO NOT ALLOW LEFT AND RIGHT KEY PRESSES
       $event.preventDefault();
@@ -121,28 +124,38 @@ angular.module('snapcode.questions', ['angularModalService'])
      $('.hidden-terminal').focus();
   });
   //**********************************************
-  ModalService.showModal({
-    templateUrl: "app/modal/modal.html",
-    // controller: "ModalController"
 
-  });
 
 
   $scope.show = function() {
-        ModalService.showModal({
-            templateUrl: 'app/modal/modal.html',
-            controller: "ModalController"
-        }).then(function(modal) {
-         console.log('modal is ', modal);
-            modal.element.modal();
-            $(".in:not(.fade)").remove();
-            modal.close.then(function(result) {
-              console.log('closed!');
-              $scope.message = "You said " + result;
-            });
-        });
-    };
+    //take out 50 points every time you show hint
+    currentScore -= 50;
+    ModalService.showModal({
+      templateUrl: 'app/modal/modal.html',
+      controller: "ModalController"
+    }).then(function(modal) {
+     console.log('modal is ', modal);
+      modal.element.modal();
+      $(".in:not(.fade)").remove();
+      modal.close.then(function(result) {
+        console.log('closed!');
+        $scope.message = "You said " + result;
+      });
+    });
+  };
 
+  $scope.showLesson = function() {
+    ModalService.showModal({
+      templateUrl: 'app/modal/modalLesson.html',
+      controller: "ModalController"
+    }).then(function(modal) {
+      modal.element.modal();
+      $(".in:not(.fade)").remove();
+      modal.close.then(function(result) {
+        $scope.message = "You said " + result;
+      });
+    });
+  };
 
   // ModalService.showModal({
   //   templateUrl: "app/modal/modal.html",
