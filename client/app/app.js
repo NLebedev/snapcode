@@ -24,7 +24,7 @@ app = angular.module('snapcode', [
       authenticate: true
     })
     .otherwise({
-      redirectTo: '/questions'
+      redirectTo: '/'
     });
     
     // We add our $httpInterceptor into the array

@@ -11,21 +11,47 @@ h1 {
   color: #fff;
 }
 
+.task {
+  font-size: 50px;
+  margin-bottom: 0px;
+  margin-top: 10px;
+  height: 250px
+}
+.task-test {
+  padding: 0 67px;
+  margin-top:30px;
+}
+.console-icon {
+  position: absolute;
+  top: 62px;
+  left: 40px;
+}
+
+.instructions-label {
+  position:absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -7px;
+  cursor: default;
+}
 .hidden-terminal {
   background-color:#000;
   color:#fff;
   height: 50px;
   font-family:monospace;
+  opacity:0;
+  height:1px;
 }
 
 .terminal {
   color: #0f8;
+  height: 300px;
   padding: 10px 15px;
   border-radius: 3px;
-  height: 200px;
   background-color: #000;
   font-size: 20px;
   font-family:monospace;
+
 }
 
 @keyframes blink {
@@ -41,10 +67,6 @@ h1 {
 
 .score-block {
   margin-top: 30px;
-}
-.task {
-  font-size: 50px;
-  margin-bottom: 90px;
 }
 .next-btn {
   width: 100%;
@@ -165,14 +187,9 @@ h1 {
   text-align: center;
   margin-bottom: 21px;
 }
-}
 
-.box-shadow :hover {
-  background-color: rgb(169, 180, 191) !important;
-}
 .coming-soon {
   position: absolute;
-  
   left: 50%;
   transform: translateX(-50%);
   max-width: 218px !important;
@@ -183,3 +200,4 @@ h1 {
 .course-name {
   text-align: center;
 }
+
