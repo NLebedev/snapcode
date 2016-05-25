@@ -203,3 +203,10 @@ h1 {
   text-align: center;
 }
 
+.score-block {
+  text-align: center;
+}
+
+.try-again-btn {
+  margin-top: 20px;
+}
