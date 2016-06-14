@@ -2,10 +2,15 @@
 <div class="container" ng-keydown="key($event)">
   
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8 task-wrap">
       <div class="btn btn-default instructions-label"><span class="glyphicon glyphicon-info-sign" aria-hidden="true" "></span> INSTRUCTIONS</div>
       <div class="well task"><span class="glyphicon glyphicon-console console-icon" aria-hidden="true"></span><div class="task-test">{{ data.currentQuestion.text}}</div></div>
     </div>
+    <div class="col-md-4 hint-wrap">
+      <div class="btn btn-default instructions-label"><span class="glyphicon glyphicon-info-sign" aria-hidden="true" "></span> HINTS</div>
+      <div class="well hints"></div>
+    </div>
+
   </div>
   <hr>
   <div class="row">
