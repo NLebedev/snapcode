@@ -82,8 +82,7 @@ angular.module('snapcode.questions', ['angularModalService'])
       //TODO: delete first two lines in number of lines in terminal > 5?
 
 
-      // -bash: dsadas: command not found
-      // $scope.showNextQuestion();
+      
       console.log('Try again, expected '+ $scope.data.currentQuestion.answer + ' got ' + $scope.data.terminalText);
     }
   }
@@ -157,24 +156,6 @@ angular.module('snapcode.questions', ['angularModalService'])
     });
   };
 
-  // ModalService.showModal({
-  //   templateUrl: "app/modal/modal.html",
-  //   controller: "modal"
-
-  // }).then(function(modal) {
-  //   // console.log('modal', modal)
-  //   //it's a bootstrap element, use 'modal' to show it
-  //   // modal.element.modal();
-  //   // modal.close.then(function(result) {
-  //   //   console.log(result);
-  //   // });
-  // });
-
-  // $dialog.dialog({}).open('modal.html');  
-  // $scope.showModal = function() {
-  //   $('#myModal').modal('show');
-  // }
-//       $('#myModal').modal({backdrop: 'static', keyboard: false}) 
 
 
   initializeQuestions();
