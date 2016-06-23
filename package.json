@@ -6,7 +6,7 @@
   "license": "UNLICENSED",
   "private": true,
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=4.1.0.27"
   },
   "scripts": {
     "start": "node server/server.js",
