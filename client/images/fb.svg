@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="23px" height="38px" viewBox="0 0 23 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>facebook25</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-952.000000, -34.000000)" fill="#FFFFFF">
+            <g id="facebook25" filter="url(#filter-1)" transform="translate(956.000000, 36.000000)">
+                <path d="M9.40122581,9.84962687 L9.40122581,7.25955224 C9.40122581,6.87067164 9.41929032,6.56955224 9.45609677,6.35686567 C9.49267742,6.14373134 9.57577419,5.9341791 9.70470968,5.72731343 C9.83341935,5.52067164 10.0420645,5.37783582 10.3301935,5.29880597 C10.6185484,5.21955224 11.0019677,5.18014925 11.4804516,5.18014925 L14.0925806,5.18014925 L14.0925806,3.55271368e-15 L9.91651613,3.55271368e-15 C7.49993548,3.55271368e-15 5.7646129,0.568432836 4.70987097,1.70529851 C3.65512903,2.84238806 3.12787097,4.51723881 3.12787097,6.73052239 L3.12787097,9.84962687 L0,9.84962687 L0,15.03 L3.12764516,15.03 L3.12764516,30.06 L9.40122581,30.06 L9.40122581,15.03 L13.5772903,15.03 L14.1291613,9.84962687 L9.40122581,9.84962687 L9.40122581,9.84962687 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

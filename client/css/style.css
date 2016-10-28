@@ -1,0 +1,335 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: auto;
+}
+
+html { 
+  background-image: radial-gradient(41% 160%, #9BDAEF 60%, #62B4DB 100%);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  color: #fff;
+  font-size: 15px;
+}
+
+
+/* TYPOGRAPHY */
+
+@font-face {
+  font-family: 'open-sans-condensed';
+  src:url('../fonts/Open Sans Condensed.ttf') format("truetype");
+ /* src:url('icomoon.eot?#iefix') format('embedded-opentype'),
+    url('icomoon.svg#icomoon') format('svg'),
+    url('icomoon.woff') format('woff'),
+    url('icomoon.ttf') format('truetype');*/
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'open-sans';
+  src:url('../fonts/Open Sans 300.ttf') format("truetype");
+ /* src:url('icomoon.eot?#iefix') format('embedded-opentype'),
+    url('icomoon.svg#icomoon') format('svg'),
+    url('icomoon.woff') format('woff'),
+    url('icomoon.ttf') format('truetype');*/
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  /*text-transform: uppercase;*/
+  font-family: 'open-sans-condensed';
+  text-align: center;
+  /*margin-bottom: 5px;*/
+  font-size: 2.2em;
+  margin-top: 0;
+  margin-bottom: 40px;
+
+}
+
+h2 {
+  text-transform: uppercase;
+  font-family: 'open-sans-condensed';
+  text-align: center;
+  font-size: 2.5em;
+  color: #fff;
+  text-decoration: underline;
+}
+
+main {
+  /*background: red;  For browsers that do not support gradients */
+  /*background: -webkit-radial-gradient(circle, red, yellow, green); /* Safari */
+  /*background: -o-radial-gradient(circle, red, yellow, green); /* Opera 11.6 to 12.0 */
+  /*background: -moz-radial-gradient(circle, red, yellow, green); /* Firefox 3.6 to 15 */
+  /*background: radial-gradient(circle, #9BDAEF, #9BDAEF, blue 90%); /* Standard syntax */
+  /* Rectangle 6: */
+  /*height: 100%;*/
+  /*height: calc(100% - 90px);*/
+  min-height: 100%;
+  margin-bottom: -90px;
+}
+
+footer {
+  height: 90px;
+  background-color: #334042;
+}
+
+main:after {
+  content: "";
+  display: block;
+}
+footer, main:after {
+  height: 90px; 
+}
+
+a {
+  color: #fff;
+}
+/*Header*/
+.header {
+  height: 100px;
+  position: relative;
+  line-height: 100px;
+}
+
+.profile-image {
+  /*border: 1px solid #979797;*/
+  border: 3px solid #E5E5E5;
+  border-radius: 50px;
+  max-width: 77px;
+  vertical-align: middle;
+  margin-left: 25px;
+  margin-left: 25px;
+  margin-top: -15px;
+  margin-right: 15px;
+}
+
+.book-img {
+  max-height: 575px;
+}
+
+.book-wrap {
+  display: inline-block;
+}
+
+.header span {
+  font-family: 'open-sans-condensed';
+  font-size: 2em;
+  color: #FCFCFC;
+  letter-spacing: 1px;
+  text-shadow: 0px 2px 4px rgba(0,0,0,0.50);
+  display: inline-block;
+}
+
+.fa {
+  position: absolute;
+  right: 80px;
+  transform: translateY(-50%);
+  top: 50%;
+  font-size: 32px;
+  text-shadow: 0px 2px 4px rgba(0,0,0,0.50);
+}
+
+.fa:hover {
+  color: #99CDED;
+}
+
+.main-content {
+  /*margin-top: 100px;*/
+  /*margin-left: 100px;*/
+  display: inline-block;
+  vertical-align: top; 
+}
+
+.content {
+  width: 936px;
+  margin: 0 auto;
+}
+
+
+h1 {
+} 
+
+/*.main-content h2 {
+  font-family: 'open-sans';
+  font-style: italic;
+  font-size: 19px;
+  color: #334042;
+  letter-spacing: 0px;
+}*/
+
+.description {
+  font-family: 'open-sans';
+  font-size: 18px;
+  color: #FFFFFF;
+  letter-spacing: 0px;
+  max-width: 500px;
+  /*border-top: 1px solid #fff;*/
+  padding-top: 15px;
+  text-align: justify;
+}
+
+/*BUTTON*/
+.main-btn {
+  background: #FFFFFF;
+  width: 316px;
+  height: 72px;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+}
+
+.main-btn:hover {
+  background: #17bd80;
+  color: #fff;
+}
+
+.main-btn span {
+  
+  font-family: 'open-sans';
+  letter-spacing: 0px;
+  font-size: 1.5em;
+  text-decoration: none;
+  vertical-align: super;
+}
+
+
+.btn-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:100%;
+  text-align: center;
+}
+
+.price {
+  /* Стоимость: 299р. 99р: */
+  font-family: 'open-sans-condensed';
+  font-size: 1.8em;
+  color: #494444;
+  letter-spacing: 0.48px;
+}
+
+.btn-wrap {
+  text-align: center;
+  margin: 0 auto;
+  width: 316px;
+  margin-top: 35px;
+  color: #334042;
+  display: block;
+}
+
+.main-content {
+  /*width: 535px;*/
+      /*margin-top: 50px;*/
+    margin-left: 50px;
+}
+
+.formats {
+  /* Доступна во всех поп: */
+  font-family: 'open-sans';
+  font-size: 18px;
+  color: #DFDFDF;
+  letter-spacing: 0px;
+  text-align: center;
+  height: 100%;
+  /*padding-top: 22px;*/
+  line-height: 90px;
+}
+
+.formats img {
+  max-width: 49px;
+  vertical-align: middle;
+}
+
+.formats-text-small {
+  display: none;
+}
+
+/*SMALL DEVICES*/
+@media (max-width: 920px) {
+  
+  main {
+    height: initial;
+  }
+
+  .content {
+    width: initial;
+  }
+
+  .book-wrap {
+    display: block;
+    text-align: center;
+  }
+
+  .main-content {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 50px;
+  }
+
+  .description {
+    text-align: center;
+    border: none;
+    max-width: 100%;
+  }
+
+  .format-images {
+    display: block;
+  }
+
+  footer {
+    height: 130px;
+  }
+
+  .formats {
+    line-height: 65px;
+  }
+
+  .formats img {
+    vertical-align: top;
+  }
+
+  .fa {
+    display: none;
+  }
+
+}
+
+@media (max-width: 368px) {
+  .header span {
+    font-size: 1.5em;
+  }
+
+  .book-img {
+    max-height: 500px;
+  }
+
+  .formats-text-small {
+    display: inline;
+  }
+
+  .formats-text {
+    display: none;
+  }
+
+}
+
+
+/* Oval 3: */
+/* Sketch doesnt export pattern fills at this point */
+/* Oval 3: */
+/* Sketch doesnt export pattern fills at this point */
