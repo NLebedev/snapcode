@@ -1,70 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='snapcode'>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <script src="https://use.fontawesome.com/a0b418d25b.js"></script>
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-25995540-2', 'auto');
-  ga('send', 'pageview');
-
-  </script>
-  <title>Наталья Барабаш - книга веселых рассказов "Меня зовут Herr Вася"</title>
+  <meta charset="utf-8" />
+  <title>Snapcode.io - improve your hacking speed</title>
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/styles/style.css">
+  
 </head>
 <body>
-  <main>
-    <div class="header">
-      <img class="profile-image" src="images/profile.jpg" /><span>Наталья Барабаш</span>
-      <a href="https://www.facebook.com/barabusia">
-        <i class="fa fa-facebook" aria-hidden="true"></i>
-      </a>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand logo-text" href="#/" >SNAPCODE<span class="glyphicon glyphicon-console logo" aria-hidden="true"></span></a>
     </div>
-    <!-- TODO: facebook icon -->
-    <div class="content">
-      <!-- <h1>Сборник веселых рассказов</h1> -->
-      <div class="book-wrap">
-        <img class="book-img" src="images/book2.png" />
-      </div>
-      <div class="main-content">
-        <h1>Сборник веселых рассказов</h1>
-        <h2>Меня зовут Herr Вася</h2>
-        <div class="description">
-          Есть люди, с которыми все время приключается что-то забавное. Ну или с их друзьями, собаками, нахально вымогающими корм птицами, шмыгающими под ногами котами и даже проплывающими мимо рыбами. 
-          Прямо не люди, а магнит какой-то для веселой неразберихи. 
-          Так вот, это я. Много лет я честно писала свои истории в Фейсбуке. А теперь по просьбам трудящихся, они же читатели, собрала самые забавные в книжку. Рекомендую в качестве   антидепрессанта. Чего-чего, а незамутненного оптимизма тут на всех хватит. 
-        </div>
-        <a class="btn-wrap" href="./pay.html">
-          <div class="main-btn">
-            <div class="btn-content">
-              <img class="book-img" src="images/download.svg" />
-              <span>Купить и скачать</span>
-            </div>
-          </div>
-          <div class="price">Стоимость: 100р.</div>
-        </a>
-      </div>
-    </div>
-  </main>
-  <footer>
-  <div class="formats">
-    <span class="formats-text">Доступна во всех популярных форматах: </span>
-    <span class="formats-text-small">В популярных форматах: </span>
-      <span class="format-images">
-        <img src="images/fb2.png" alt="fb2"/>
-        <img src="images/epub.png" alt="epub"/>
-        <img src="images/mobi2.png" alt="mobi"/>
-        <img src="images/pdf.png" alt="pdf"/>
-      </span>
-  </div>
-  </footer>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#/questions">Command Line</a></li>
+        <li><a href="#/">Git</a></li>
+        <li><a href="#/">Sublime Shortcuts</a></li>
+        
+        <li class="dropdown">
+          <ul class="dropdown-menu">
+            <li><a href="#/">Command Line</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#/">Git</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#/">Sublime Shortcuts</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#/">Login</a></li>
+        <li><a href="#/">Signup</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+  <div ng-view></div>
+</div>
+
+<script src="lib/jquery/dist/jquery.js"></script>
+<script src="lib/angular/angular.js"></script>
+<!-- <script src="lib/angular-bootstrap/ui-bootstrap.js"></script> -->
+<script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+<script src="lib/angular-route/angular-route.js"></script>
+<script src="app/questions/questions.js"></script>
+<script src="app/cources/cources.js"></script>
+<script src="app/services/services.js"></script>
+<script src="lib\angular-modal-service\dst\angular-modal-service.min.js"></script>
+<script src="app/app.js"></script>
+<script src="https://use.fontawesome.com/083e20e8f3.js"></script>
 </body>
 </html>
-
